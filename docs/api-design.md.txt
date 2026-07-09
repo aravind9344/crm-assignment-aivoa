@@ -1,0 +1,38 @@
+# API Design
+
+
+## Create Interaction
+
+POST /interaction
+
+Purpose:
+Save a new HCP interaction.
+
+
+## Get Interactions
+
+GET /interactions
+
+Purpose:
+Retrieve interaction history.
+
+
+## Get Single Interaction
+
+GET /interaction/{id}
+
+
+## AI Chat
+
+POST /chat
+
+Purpose:
+Process user conversation using LangGraph and Groq.
+
+
+## Voice Processing
+
+POST /voice
+
+Purpose:
+Receive speech converted text and process using AI.

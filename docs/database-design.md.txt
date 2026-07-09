@@ -1,0 +1,22 @@
+# Database Design
+
+## Interaction Table
+
+
+| Column | Type |
+|---|---|
+| id | Integer |
+| doctor_name | String |
+| hospital | String |
+| meeting_date | Date |
+| products | String |
+| discussion | Text |
+| followup_date | Date |
+| notes | Text |
+| summary | Text |
+| created_at | Timestamp |
+
+
+## Purpose
+
+Stores all Healthcare Professional interaction records.

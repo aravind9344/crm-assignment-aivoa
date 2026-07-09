@@ -1,0 +1,91 @@
+# AI-First CRM HCP Module - Architecture
+
+## Overview
+
+This project is an AI-powered Customer Relationship Management (CRM) system designed for Healthcare Professionals (HCP) interaction logging.
+
+The system allows medical representatives to record interactions using:
+
+1. Structured Form
+2. AI Conversational Copilot
+3. Voice-to-Text Input
+
+
+## System Architecture
+
+User
+ |
+ |
+React + Redux Frontend
+ |
+ |
+FastAPI Backend
+ |
+ |
+LangGraph AI Agent
+ |
+ |
+Groq LLM (Gemma2-9B-IT)
+ |
+ |
+PostgreSQL Database
+
+
+## Modules
+
+### 1. Dashboard
+- Shows interaction statistics
+- Displays AI insights
+
+### 2. Log Interaction
+Two modes:
+
+#### Structured Form
+Users manually enter:
+- Doctor name
+- Hospital
+- Products
+- Discussion
+- Follow-up date
+- Notes
+
+
+#### AI Copilot
+Users can:
+- Type interaction details
+- Speak using voice input
+
+AI extracts structured information automatically.
+
+
+### 3. Interaction History
+- View previous interactions
+- Search records
+- View summaries
+
+
+## Technology Stack
+
+Frontend:
+- React
+- Redux
+- Axios
+- Google Inter Font
+
+
+Backend:
+- FastAPI
+- SQLAlchemy
+
+
+AI:
+- LangGraph
+- Groq LLM
+
+
+Database:
+- PostgreSQL
+
+
+Voice:
+- Web Speech API

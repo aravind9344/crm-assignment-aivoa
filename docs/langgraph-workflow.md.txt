@@ -1,0 +1,57 @@
+# LangGraph Workflow
+
+
+User Input
+
+↓
+
+Extract Interaction Details
+
+↓
+
+Validate Required Fields
+
+↓
+
+Ask Follow-up Questions
+
+↓
+
+Generate Summary
+
+↓
+
+Save Interaction
+
+
+## Tools
+
+
+### 1. Extraction Tool
+
+Extracts:
+- Doctor
+- Hospital
+- Product
+- Discussion
+- Follow-up
+
+
+### 2. Validation Tool
+
+Checks missing information.
+
+
+### 3. Question Tool
+
+Requests missing details.
+
+
+### 4. Summary Tool
+
+Creates CRM summary.
+
+
+### 5. Save Tool
+
+Stores data in PostgreSQL.

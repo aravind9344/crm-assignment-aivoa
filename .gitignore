@@ -1,0 +1,75 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Environment Variables
+.env
+
+# Python Cache
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# ==========================
+# Node / React
+# ==========================
+node_modules/
+dist/
+build/
+
+# npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite
+.vite/
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# Database
+# ==========================
+*.sqlite3
+*.db
+
+# ==========================
+# Temporary Files
+# ==========================
+*.tmp
+*.temp
+
+# ==========================
+# Cache
+# ==========================
+.cache/
+
+# ==========================
+# Misc
+# ==========================
+coverage/
