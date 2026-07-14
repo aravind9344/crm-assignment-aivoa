@@ -1,10 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { Mic, MicOff, Sparkles, Bot, User } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { setCRMData, updateField } from "../redux/crmSlice";
 import api from "../services/api";
 
 
-function ChatBox({ setCrmData }) {
+function ChatBox({ resetChat }) {
 
+  const dispatch = useDispatch();
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [listening, setListening] = useState(false);
@@ -23,12 +26,15 @@ function ChatBox({ setCrmData }) {
 
 
   useEffect(() => {
+  setMessage("");
 
-    chatEndRef.current?.scrollIntoView({
-      behavior: "smooth"
-    });
-
-  }, [messages]);
+  setMessages([
+    {
+      sender: "ai",
+      text: "👋 Hello! Tell me about today's doctor interaction.",
+    },
+  ]);
+}, [resetChat]);
 
 
 
@@ -166,22 +172,16 @@ function ChatBox({ setCrmData }) {
       if(res.data.mode === "extract"){
 
 
-        setCrmData({
-
-          hcp_name: res.data.hcp_name || "",
-
-          hospital: res.data.hospital || "",
-
-          specialty: res.data.specialty || "",
-
-          interaction_type: res.data.interaction_type || "",
-
-          notes: res.data.notes || "",
-
-          follow_up: res.data.follow_up || ""
-
-        });
-
+        dispatch(
+  setCRMData({
+    hcp_name: res.data.hcp_name || "",
+    hospital: res.data.hospital || "",
+    specialty: res.data.specialty || "",
+    interaction_type: res.data.interaction_type || "",
+    notes: res.data.notes || "",
+    follow_up: res.data.follow_up || "",
+  })
+);
 
 
         setMessages(prev => [
@@ -208,14 +208,12 @@ function ChatBox({ setCrmData }) {
       else if(res.data.mode === "update"){
 
 
-        setCrmData(prev => ({
-
-          ...prev,
-
-          [res.data.field]: res.data.value
-
-        }));
-
+        dispatch(
+  updateField({
+    field: res.data.field,
+    value: res.data.value,
+  })
+);
 
 
         setMessages(prev => [
